@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/lblIdUsuario_CadUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Titulo"
+        android:text="ID"/>
+
+    <TextView
+        android:id="@+id/lblLoginUsuario_CadUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/LebelBold"
+        android:text="LOGIN"/>
+
+    <EditText
+        android:id="@+id/txtLoginUsuario_CadUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/login"
+        />
+
+    <TextView
+        android:id="@+id/lblSenhaUsuario_CadUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/LebelBold"
+        android:text="SENHA"/>
+
+    <EditText
+        android:id="@+id/txtSenhaUsuario_CadUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/senha"
+        android:inputType="textPassword"
+        />
+
+    <TextView
+        android:id="@+id/lblEmailUsuario_CadUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/LebelBold"
+        android:text="E-MAIL"/>
+
+    <EditText
+        android:id="@+id/txtEmailUsuario_CadUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/e_mail"
+        android:inputType="textEmailAddress"  />
+
+    <TextView
+        android:id="@+id/lblTelefoneUsuario_CadUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/LebelBold"
+        android:text="TELEFONE"/>
+
+
+    <br.com.sapereaude.maskedEditText.MaskedEditText
+        android:id="@+id/txtTelefoneUsuario_CadUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        mask:allowed_chars="1234567890"
+        mask:mask=" (##) # #### ####"
+        android:hint=" (##) # #### ####"
+        mask:keep_hint="true"
+        />
+
+
+    <Button
+        android:id="@+id/btnExcluir_CadUsuario"
+        style="@style/BotaoVermelho"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/excluir" />
+    <Button
+        android:id="@+id/btnVoltar_CadUsuario"
+        style="@style/BotaoVermelho"
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Voltar" />
+
+
+</LinearLayout>

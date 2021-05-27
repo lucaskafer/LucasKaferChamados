@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="2dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+    <TextView
+        style="@style/Titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="-----------------------------------------------" />
+
+    <TextView
+        android:id="@+id/lblIdServicos_CadServicos"
+        style="@style/Titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Incluir Ordem de Serviço" />
+    <TextView
+        style="@style/Titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="-----------------------------------------------" />
+
+
+    <TextView
+        android:id="@+id/lblNomeCliente_IncluirOS"
+        style="@style/LebelBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" ----- Nome do Clinete ----- " />
+
+    <Spinner
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/spiClientes_IncluirOS"
+        android:padding="15dp"
+        />
+
+    <TextView
+        android:id="@+id/lblNomeServicos_IncluirOS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/LebelBold"
+        android:text=" ----- Serviço ----- "/>
+
+    <Spinner
+        android:id="@+id/spiServico_IncluirOS"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="15dp"
+       />
+
+    <TextView
+        android:id="@+id/lblData_IncluirOS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/LebelBold"
+        android:text=" ----- Data ----- "/>
+
+    <EditText
+        android:id="@+id/editTextData_IncluirOS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="Data"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/lblObservacao_IncluirOS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/LebelBold"
+        android:text=" ----- Observação ----- "/>
+
+    <EditText
+        android:id="@+id/editTextObservacao_IncluirOS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Observação"
+        android:padding="10dp"/>
+
+    <TextView
+        style="@style/Titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="-----------------------------------------------" />
+
+    <Button
+        android:id="@+id/btnExcluir_CadOS"
+        style="@style/BotaoVermelho"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/excluir" />
+    <Button
+        android:id="@+id/btnVoltar_CadOS"
+        style="@style/BotaoVermelho"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Voltar" />
+
+    <TextView
+        style="@style/Titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="-----------------------------------------------" />
+
+
+
+</LinearLayout>

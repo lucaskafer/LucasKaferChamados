@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/lblId_item_Listusuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Titulo"
+        android:text="ID"/>
+
+    <TextView
+        android:id="@+id/lblLogin_item_Listusuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Texto"
+        android:text="LOGIN"/>
+
+
+
+</LinearLayout>

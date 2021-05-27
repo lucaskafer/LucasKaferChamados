@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Titulo" parent="TextAppearance.AppCompat">
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+    <style name="Texto" parent="TextAppearance.AppCompat">
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+    <style name="Botao_Login" parent="TextAppearance.AppCompat">
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+         <item name="android:textSize">25dp</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+    <style name="LebelBold">labelBold
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/purple_700</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="BotaoVermelho" parent="Widget.AppCompat.Button">
+        <item name="backgroundTint">@color/red</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="Button_teste">
+        <item name="actionModeSplitBackground">@color/white</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:translationZ">10dp</item>
+        <item name="android:background">@drawable/primary_round</item>
+    </style>
+
+
+</resources>

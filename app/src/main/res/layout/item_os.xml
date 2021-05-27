@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:orientation="vertical"
+    tools:context=".adapter.OSfinalizadasAdapter">
+
+    >
+
+    <TextView
+        android:id="@+id/lblId_item_osfinalizada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Titulo"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="ID Cliente "/>
+
+    <TextView
+        android:id="@+id/lblNome_Cliente_item_osfinalizada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        style="@style/Titulo"
+        android:text="Nome_CLiente"/>
+
+    <TextView
+        android:id="@+id/lblId_Cliente_item_osfinalizada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Titulo"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="ID OS "/>
+
+    <TextView
+        android:id="@+id/lblNome_item_osfinalizada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        style="@style/Titulo"
+        android:text="Nome_serviço"/>
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        style="@style/Titulo"
+        android:text="____________________________________"/>
+
+    <TextView
+        android:id="@+id/txtCifrao_item_osfinalizada"
+        style="@style/Texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="R$" />
+
+    <TextView
+        android:id="@+id/lblValor_item_osfinalizada"
+        style="@style/Texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="Valor" />
+    <TextView
+        android:id="@+id/lblStatus_item_osfinalizada"
+        style="@style/Texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="Status" />
+
+    <TextView
+        android:id="@+id/lblObservacao_item_osfinalizada"
+        style="@style/Texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="115dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="Observação" />
+
+
+</RelativeLayout>
