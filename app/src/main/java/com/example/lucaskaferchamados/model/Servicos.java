@@ -5,7 +5,7 @@ public class Servicos {
     private int id_servico;
     private String nome_servico;
     private String status_servico;
-    private String valor_servico;
+    private Float valor_servico;
     private String observacao_servico;
 
     public String getObservacao_servico () { return observacao_servico; }
@@ -24,11 +24,9 @@ public class Servicos {
         this.nome_servico = nome;
     }
 
-    public String getValor_servico () { return valor_servico; }
+    public Float getValor_servico () { return valor_servico; }
 
-    public void setValor_servico (String valor) {
-        this.valor_servico = valor;
-    }
+    public void setValor_servico (Float valor) { this.valor_servico = valor; }
 
     public String getStatus_servico () {
         return status_servico;

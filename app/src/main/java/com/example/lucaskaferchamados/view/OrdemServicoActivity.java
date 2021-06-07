@@ -20,7 +20,7 @@ import com.example.lucaskaferchamados.model.Usuario;
 
 import java.util.ArrayList;
 
-public class AbrirOrdemServicoActivity extends AppCompatActivity {
+public class OrdemServicoActivity extends AppCompatActivity {
 
 
     Context context;
@@ -33,7 +33,7 @@ public class AbrirOrdemServicoActivity extends AppCompatActivity {
 
     ServicoController servicoController;
     UsuarioController usuarioController;
-    AbrirOrdemServicoActivity incluirServicosActivity;
+    OrdemServicoActivity incluirServicosActivity;
 
 
 
@@ -42,7 +42,7 @@ public class AbrirOrdemServicoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_incluirordemservico);
 
-        context = AbrirOrdemServicoActivity.this;
+        context = OrdemServicoActivity.this;
 
 
         lblId = findViewById(R.id.lblIdServicos_CadServicos);

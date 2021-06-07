@@ -59,9 +59,4 @@
         android:text="Visualizar OS"
         android:textColor="@color/black" />
 
-
-
-
-
-
 </LinearLayout>

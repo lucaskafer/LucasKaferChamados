@@ -23,7 +23,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="36dp"
         android:ems="200"
-        android:hint="Usuario" />
+        android:hint="Usuario"/>
 
 
     <EditText
@@ -33,10 +33,7 @@
         android:layout_marginTop="36dp"
         android:ems="200"
         android:hint="Senha"
-        android:inputType="textPassword"
-
-
-        />
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/button_login"
@@ -48,7 +45,5 @@
         android:layout_gravity="center"
         android:textColor="@color/black"
         android:text="@string/text_botao_login" />
-
-
 
 </LinearLayout>

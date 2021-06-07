@@ -35,15 +35,15 @@ public class ServicoController {
 
 
             Cursor resultado = conexao.rawQuery(sql.toString(), null);
+
             if (resultado.getCount() > 0) {
 
                 resultado.moveToFirst();
-
                 objeto = new Servicos();
 
                 objeto.setId_servico(resultado.getInt(resultado.getColumnIndexOrThrow("id_servicos")));
                 objeto.setNome_servico(resultado.getString(resultado.getColumnIndexOrThrow("nome_servicos")));
-                objeto.setValor_servico(resultado.getString(resultado.getColumnIndexOrThrow("valor_servicos")));
+                objeto.setValor_servico(resultado.getFloat(resultado.getColumnIndexOrThrow("valor_servicos")));
                 objeto.setObservacao_servico(resultado.getString(resultado.getColumnIndexOrThrow("observacao_servicos")));
                 objeto.setStatus_servico(resultado.getString(resultado.getColumnIndexOrThrow("status_servicos")));
 
@@ -60,10 +60,9 @@ public class ServicoController {
     public boolean incluir (Servicos objeto) {
         try {
             ContentValues valores = new ContentValues();
-            valores.put("id_servicos", objeto.getId_servico());
-            valores.put("nome_servicos", objeto.getStatus_servico());
+            valores.put("nome_servicos", objeto.getNome_servico());
             valores.put("valor_servicos", objeto.getValor_servico());
-            valores.put("observacao_servicos", objeto.getValor_servico());
+            valores.put("observacao_servicos", objeto.getObservacao_servico());
             valores.put("status_servicos", objeto.getStatus_servico());
 
             conexao.insertOrThrow(Tabelas.TB_SERVICOS, null, valores);
@@ -84,9 +83,9 @@ public class ServicoController {
             ContentValues valores = new ContentValues();
 
             valores.put("id_servicos", objeto.getId_servico());
-            valores.put("nome_servicos", objeto.getStatus_servico());
+            valores.put("nome_servicos", objeto.getNome_servico());
             valores.put("valor_servicos", objeto.getValor_servico());
-            valores.put("observacao_servicos", objeto.getValor_servico());
+            valores.put("observacao_servicos", objeto.getObservacao_servico());
             valores.put("status_servicos", objeto.getStatus_servico());
 
             String[] parametros= new String[1];
@@ -144,7 +143,7 @@ public class ServicoController {
 
                     objeto.setId_servico(resultado.getInt(resultado.getColumnIndexOrThrow("id_servicos")));
                     objeto.setNome_servico(resultado.getString(resultado.getColumnIndexOrThrow("nome_servicos")));
-                    objeto.setValor_servico(resultado.getString(resultado.getColumnIndexOrThrow("valor_servicos")));
+                    objeto.setValor_servico(resultado.getFloat(resultado.getColumnIndexOrThrow("valor_servicos")));
                     objeto.setObservacao_servico(resultado.getString(resultado.getColumnIndexOrThrow("observacao_servicos")));
                     objeto.setStatus_servico(resultado.getString(resultado.getColumnIndexOrThrow("status_servicos")));
 

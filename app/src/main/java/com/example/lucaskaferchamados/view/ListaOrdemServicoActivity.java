@@ -18,7 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 
-public class ListaOSSalvosActivity extends AppCompatActivity {
+public class ListaOrdemServicoActivity extends AppCompatActivity {
 
 
     ListView ltvOSServicos;
@@ -30,7 +30,7 @@ public class ListaOSSalvosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listaos);
 
-        context = ListaOSSalvosActivity.this;
+        context = ListaOrdemServicoActivity.this;
         ltvOSServicos= findViewById(R.id.ltv_OS_Lista_Usuario);
 
 

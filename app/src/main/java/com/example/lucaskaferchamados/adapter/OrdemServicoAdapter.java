@@ -12,17 +12,17 @@ import android.widget.TextView;
 import com.example.lucaskaferchamados.R;
 import com.example.lucaskaferchamados.config.Globais;
 import com.example.lucaskaferchamados.model.Servicos;
-import com.example.lucaskaferchamados.view.AbrirOrdemServicoActivity;
+import com.example.lucaskaferchamados.view.OrdemServicoActivity;
 
 import java.util.ArrayList;
 
-public class OSfinalizadasAdapter extends ArrayAdapter<Servicos> {
+public class OrdemServicoAdapter extends ArrayAdapter<Servicos> {
 
     Context context;
     ArrayList<Servicos> elementos;
 
-    public OSfinalizadasAdapter (Context context, ArrayList<Servicos> elementos) {
-        super(context, R.layout.item_os, elementos);
+    public OrdemServicoAdapter (Context context, ArrayList<Servicos> elementos) {
+        super(context, R.layout.item_ordemservico, elementos);
         this.context = context;
         this.elementos = elementos;
     }
@@ -34,7 +34,7 @@ public class OSfinalizadasAdapter extends ArrayAdapter<Servicos> {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             // toda vez que passa por um item da lista, os elementos são associados
-            @SuppressLint("ViewHolder") View rowView = inflater.inflate(R.layout.item_os, parent, false);
+            @SuppressLint("ViewHolder") View rowView = inflater.inflate(R.layout.item_ordemservico, parent, false);
 
 
             TextView id = rowView.findViewById(R.id.lblId_item_osfinalizada);
@@ -51,7 +51,7 @@ public class OSfinalizadasAdapter extends ArrayAdapter<Servicos> {
             rowView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick (View v) {
-                    Intent tela = new Intent(context, AbrirOrdemServicoActivity.class);
+                    Intent tela = new Intent(context, OrdemServicoActivity.class);
                     tela.putExtra("ID", objeto.getId_servico());
                     context.startActivity(tela);
                 }

@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     android:padding="15dp"
     android:orientation="vertical"
-    tools:context=".adapter.OSfinalizadasAdapter">
-
-    >
+    tools:context=".adapter.OrdemServicoAdapter">
 
     <TextView
         android:id="@+id/lblId_item_osfinalizada"

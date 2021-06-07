@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LucasKaferChamados">
-        <activity android:name=".view.AbrirOrdemServicoActivity" />
-        <activity android:name=".view.ListaOSSalvosActivity" />
+        <activity android:name=".view.OrdemServicoActivity" />
+        <activity android:name=".view.ListaOrdemServicoActivity" />
         <activity android:name=".view.ListasUsuariosActivity" />
         <activity android:name=".view.ListaServicosActivity" />
         <activity android:name=".view.ServicosActivity" />

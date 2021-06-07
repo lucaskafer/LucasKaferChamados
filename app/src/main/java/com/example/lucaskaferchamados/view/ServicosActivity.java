@@ -1,7 +1,6 @@
 package com.example.lucaskaferchamados.view;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -46,20 +45,8 @@ public class ServicosActivity extends AppCompatActivity  {
         txtValor_servico = findViewById(R.id.txtValorServico_CadServico);
         txtObservacao_servicos = findViewById(R.id.txtObservacao_CadServico);
         spiStatusServico = findViewById(R.id.spiTipoUsuario_CadServicos);
+
         btnExcluir = findViewById(R.id.btnExcluir_CadServicos);
-        btnVoltar = findViewById(R.id.btnVoltar_CadServicos);
-
-
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View v) {
-
-                Intent tela = new Intent(context, ListaServicosActivity.class);
-                startActivity(tela);
-
-            }
-        });
-
 
         // Spinner Lista de Status
         ArrayList<StatusServicos> array_status = new ArrayList<>();
@@ -93,6 +80,7 @@ public class ServicosActivity extends AppCompatActivity  {
 
                 servicoController = new ServicoController(context);
                 objServico.setId_servico(Integer.parseInt(lblId_servico.getText().toString()));
+
                 boolean retorno = servicoController.excluir(objServico);
 
                 if (retorno) {
@@ -102,7 +90,6 @@ public class ServicosActivity extends AppCompatActivity  {
             }
         });
     }
-
     //Funcao para inflar o menu na tela
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -110,22 +97,21 @@ public class ServicosActivity extends AppCompatActivity  {
         inflater.inflate(R.menu.menu_cad, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         boolean retorno;
 
         switch (id){
-
             case R.id.action_ok:
 
                 objServico = new Servicos();
                 ServicoController objController = new ServicoController(context);
 
-
                 objServico.setNome_servico(txtNome_servico.getText().toString());
-                //objServico.getValor(txtValor_servico.getText().toString());
+                objServico.setValor_servico(Float.parseFloat(txtValor_servico.getText().toString()));
+                objServico.setObservacao_servico(txtObservacao_servicos.getText().toString());
+                // incluit spiStatusServico
 
                 if(!lblId_servico.getText().equals("ID")){
                     //alterar
@@ -141,27 +127,22 @@ public class ServicosActivity extends AppCompatActivity  {
                         Globais.exibirMensagens(context, "Serviço incluído com sucesso");
                     }
                 }
-
                 finish();
 
             case R.id.action_cancel:
                 finish();
-
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-
     private void preencheCampos (Servicos objeto) {
-
         try {
             lblId_servico.setText(String.valueOf(objeto.getId_servico()));
             txtNome_servico.setText(objeto.getNome_servico());
             txtObservacao_servicos.setText(String.valueOf(objeto.getObservacao_servico()));
             //txtStatus_servico.setEnabled(false);
             txtValor_servico.setText(String.valueOf(objeto.getValor_servico()));
-
 
 
         } catch (Exception e) {

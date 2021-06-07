@@ -19,20 +19,20 @@ public class DadosOpenHelper extends SQLiteOpenHelper
     @Override
     public void onCreate (SQLiteDatabase db) {
         try {
-
-            StringBuffer sqlFinanceiro = new StringBuffer();
-            sqlFinanceiro.append(" CREATE TABLE IF NOT EXISTS ");
-            sqlFinanceiro.append(Tabelas.TB_SERVICOS);
-            sqlFinanceiro.append("(");
-            sqlFinanceiro.append("id_servicos INTEGER PRIMARY KEY AUTOINCREMENT, ");
-            sqlFinanceiro.append("nome_servicos VARCHAR(30) NULL, ");
-            sqlFinanceiro.append("valor_servicos VARCHAR(30) NULL, ");
-            sqlFinanceiro.append("status_servicos VARCHAR(30) NULL,");
-            sqlFinanceiro.append("observacao_servicos VARCHAR(5000) NULL,");
-            sqlFinanceiro.append("date_servicos DATE NULL");
+            //-----------------------------------------------
+            StringBuffer sqlServico = new StringBuffer();
+            sqlServico.append(" CREATE TABLE IF NOT EXISTS ");
+            sqlServico.append(Tabelas.TB_SERVICOS);
+            sqlServico.append("(");
+            sqlServico.append("id_servicos INTEGER PRIMARY KEY AUTOINCREMENT, ");
+            sqlServico.append("nome_servicos VARCHAR(30) NULL, ");
+            sqlServico.append("valor_servicos NUMERIC(10,5)NULL, ");
+            sqlServico.append("status_servicos VARCHAR(30) NULL,");
+            sqlServico.append("observacao_servicos VARCHAR(5000) NULL,");
+            sqlServico.append("date_servicos DATE NULL");
             //sqlSerPadrao.append("FOREIGN KEY(id) REFERENCES "+ Tabelas.TB_SERVICOS +"(id)");
-            sqlFinanceiro.append(")");
-            db.execSQL(sqlFinanceiro.toString());
+            sqlServico.append(")");
+            db.execSQL(sqlServico.toString());
 
             StringBuilder sqlSerPadrao = new StringBuilder();
             sqlSerPadrao.append("INSERT INTO ");
@@ -44,27 +44,44 @@ public class DadosOpenHelper extends SQLiteOpenHelper
             sqlSerPadrao2.append(Tabelas.TB_SERVICOS);
             sqlSerPadrao2.append("(nome_servicos, valor_servicos, status_servicos, observacao_servicos ) VALUES ('Servico_Cancelado', '0,00', 'Inativo', 'Cliente cancelou')");
             db.execSQL(sqlSerPadrao2.toString());
-
+            //-----------------------------------------------------------------------
 
 
             StringBuffer sqlUsuarios = new StringBuffer();
             sqlUsuarios.append(" CREATE TABLE IF NOT EXISTS ");
             sqlUsuarios.append(Tabelas.TB_USUARIOS);
             sqlUsuarios.append("(");
-            sqlUsuarios.append("id INTEGER PRIMARY KEY AUTOINCREMENT, ");
-            sqlUsuarios.append("login VARCHAR(30) NOT NULL, ");
-            sqlUsuarios.append("senha VARCHAR(100) NOT NULL, ");
-            sqlUsuarios.append("email VARCHAR(100) NULL, ");
-            sqlUsuarios.append("telefone VARCHAR(20) NULL ");
+            sqlUsuarios.append("id_user INTEGER PRIMARY KEY AUTOINCREMENT, ");
+            sqlUsuarios.append("login_user VARCHAR(30) NOT NULL, ");
+            sqlUsuarios.append("senha_user VARCHAR(100) NOT NULL, ");
+            sqlUsuarios.append("email_user VARCHAR(100) NULL, ");
+            sqlUsuarios.append("telefone_user VARCHAR(20) NULL ");
             sqlUsuarios.append(")");
             db.execSQL(sqlUsuarios.toString());
 
             StringBuilder sqlUserAdmin = new StringBuilder();
             sqlUserAdmin.append("INSERT INTO ");
             sqlUserAdmin.append(Tabelas.TB_USUARIOS);
-            sqlUserAdmin.append("(login, senha) VALUES('admin', '" + Globais.md5("admin") +"')");
+            sqlUserAdmin.append("(login_user , senha_user ) VALUES('admin', '" + Globais.md5("admin") +"')");
             db.execSQL(sqlUserAdmin.toString());
 
+
+            //---------------------------------------------
+
+            StringBuffer sqlOrdemServico = new StringBuffer();
+            sqlOrdemServico.append(" CREATE TABLE IF NOT EXISTS ");
+            sqlOrdemServico.append(Tabelas.TB_OS);
+            sqlOrdemServico.append("(");
+            sqlOrdemServico.append("id_user INTEGER PRIMARY KEY AUTOINCREMENT, ");
+            // id_servico
+            // id_user
+            sqlOrdemServico.append("nome_servicos VARCHAR(30) NULL, ");
+            sqlOrdemServico.append("valor_servicos VARCHAR(30) NULL, ");
+            sqlOrdemServico.append("status_servicos VARCHAR(30) NULL,");
+            sqlOrdemServico.append("observacao_servicos VARCHAR(5000) NULL,");
+            sqlOrdemServico.append("date_servicos DATE NULL");
+            sqlOrdemServico.append(")");
+            db.execSQL(sqlOrdemServico.toString());
 
 
 

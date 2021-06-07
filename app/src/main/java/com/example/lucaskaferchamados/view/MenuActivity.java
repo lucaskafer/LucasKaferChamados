@@ -47,7 +47,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 try {
-                    Intent tela = new Intent(context, ListaOSSalvosActivity.class);
+                    Intent tela = new Intent(context, ListaOrdemServicoActivity.class);
                     startActivity(tela);
                 }catch (Exception ex)
                 {
@@ -73,7 +73,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 try {
-                    Intent tela = new Intent(context, AbrirOrdemServicoActivity.class);
+                    Intent tela = new Intent(context, OrdemServicoActivity.class);
                     startActivity(tela);
 
                 }catch (Exception ex)

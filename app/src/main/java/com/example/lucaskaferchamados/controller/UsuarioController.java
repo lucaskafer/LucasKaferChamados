@@ -33,19 +33,19 @@ public class UsuarioController {
             StringBuilder sql = new StringBuilder();
             sql.append("SELECT * FROM ");
             sql.append(Tabelas.TB_USUARIOS);
-            sql.append(" WHERE login = '"+ usuario +"'");
-            sql.append(" AND senha = '"+ senha +"'");
+            sql.append(" WHERE login_user = '"+ usuario +"'");
+            sql.append(" AND senha_user = '"+ senha +"'");
 
             Cursor resultado = conexao.rawQuery(sql.toString(), null);
 
             if (resultado.moveToNext()) {
 
                 objeto = new Usuario();
-                objeto.setId(resultado.getInt(resultado.getColumnIndexOrThrow("id")));
-                objeto.setLogin(resultado.getString(resultado.getColumnIndexOrThrow("login")));
-                objeto.setSenha(resultado.getString(resultado.getColumnIndexOrThrow("senha")));
-                objeto.setEmail(resultado.getString(resultado.getColumnIndexOrThrow("email")));
-                objeto.setTelefone(resultado.getString(resultado.getColumnIndexOrThrow("telefone")));
+                objeto.setId(resultado.getInt(resultado.getColumnIndexOrThrow("id_user")));
+                objeto.setLogin(resultado.getString(resultado.getColumnIndexOrThrow("login_user")));
+                objeto.setSenha(resultado.getString(resultado.getColumnIndexOrThrow("senha_user")));
+                objeto.setEmail(resultado.getString(resultado.getColumnIndexOrThrow("email_user")));
+                objeto.setTelefone(resultado.getString(resultado.getColumnIndexOrThrow("telefone_user")));
             }
 
             return objeto;
@@ -63,18 +63,18 @@ public class UsuarioController {
             StringBuilder sql = new StringBuilder();
             sql.append(" SELECT * FROM ");
             sql.append(Tabelas.TB_USUARIOS);
-            sql.append(" WHERE id = '" + id + "'");
+            sql.append(" WHERE id_user = '" + id + "'");
 
 
             Cursor resultado = conexao.rawQuery(sql.toString(), null);
             if (resultado.getCount() > 0) {
                 resultado.moveToFirst();
                 objeto = new Usuario();
-                objeto.setId(resultado.getInt(resultado.getColumnIndexOrThrow("id")));
-                objeto.setLogin(resultado.getString(resultado.getColumnIndexOrThrow("login")));
-                objeto.setSenha(resultado.getString(resultado.getColumnIndexOrThrow("senha")));
-                objeto.setEmail(resultado.getString(resultado.getColumnIndexOrThrow("email")));
-                objeto.setTelefone(resultado.getString(resultado.getColumnIndexOrThrow("telefone")));
+                objeto.setId(resultado.getInt(resultado.getColumnIndexOrThrow("id_user")));
+                objeto.setLogin(resultado.getString(resultado.getColumnIndexOrThrow("login_user")));
+                objeto.setSenha(resultado.getString(resultado.getColumnIndexOrThrow("senha_user")));
+                objeto.setEmail(resultado.getString(resultado.getColumnIndexOrThrow("email_user")));
+                objeto.setTelefone(resultado.getString(resultado.getColumnIndexOrThrow("telefone_user")));
             }
 
             return objeto;
@@ -88,10 +88,10 @@ public class UsuarioController {
     public boolean incluir (Usuario objeto) {
         try {
             ContentValues valores = new ContentValues();
-            valores.put("login", objeto.getLogin());
-            valores.put("senha", objeto.getSenha());
-            valores.put("email", objeto.getEmail());
-            valores.put("telefone", objeto.getTelefone());
+            valores.put("login_user", objeto.getLogin());
+            valores.put("senha_user", objeto.getSenha());
+            valores.put("email_user", objeto.getEmail());
+            valores.put("telefone_user", objeto.getTelefone());
 
             conexao.insertOrThrow(Tabelas.TB_USUARIOS, null, valores);
             return true;
@@ -109,15 +109,15 @@ public class UsuarioController {
         try {
 
             ContentValues valores = new ContentValues();
-            valores.put("login", objeto.getLogin());
-            valores.put("senha", objeto.getSenha());
-            valores.put("email", objeto.getEmail());
-            valores.put("telefone", objeto.getTelefone());
+            valores.put("login_user", objeto.getLogin());
+            valores.put("senha_user", objeto.getSenha());
+            valores.put("email_user", objeto.getEmail());
+            valores.put("telefone_user", objeto.getTelefone());
 
             String[] parametros= new String[1];
             parametros[0] = String.valueOf(objeto.getId());
 
-            conexao.update(Tabelas.TB_USUARIOS, valores, "id = ? ", parametros );
+            conexao.update(Tabelas.TB_USUARIOS, valores, "id_user = ? ", parametros );
             return true;
 
         }
@@ -136,7 +136,7 @@ public class UsuarioController {
             String[] parametros= new String[1];
             parametros[0] = String.valueOf(objeto.getId());
 
-            conexao.delete(Tabelas.TB_USUARIOS, "id = ?", parametros );
+            conexao.delete(Tabelas.TB_USUARIOS, "id_user = ?", parametros );
             return true;
 
         }
@@ -165,10 +165,10 @@ public class UsuarioController {
                 Usuario objeto;
                 do {
                     objeto = new Usuario();
-                    objeto.setId(resultado.getInt(resultado.getColumnIndexOrThrow("id")));
-                    objeto.setLogin(resultado.getString(resultado.getColumnIndexOrThrow("login")));
-                    objeto.setEmail(resultado.getString(resultado.getColumnIndexOrThrow("email")));
-                    objeto.setTelefone(resultado.getString(resultado.getColumnIndexOrThrow("telefone")));
+                    objeto.setId(resultado.getInt(resultado.getColumnIndexOrThrow("id_user")));
+                    objeto.setLogin(resultado.getString(resultado.getColumnIndexOrThrow("login_user")));
+                    objeto.setEmail(resultado.getString(resultado.getColumnIndexOrThrow("email_user")));
+                    objeto.setTelefone(resultado.getString(resultado.getColumnIndexOrThrow("telefone_user")));
 
                     listagem.add(objeto);
 
