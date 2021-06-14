@@ -30,13 +30,11 @@ public class UsuarioController {
 
             senha = Globais.md5(senha);
 
-            StringBuilder sql = new StringBuilder();
-            sql.append("SELECT * FROM ");
-            sql.append(Tabelas.TB_USUARIOS);
-            sql.append(" WHERE login_user = '"+ usuario +"'");
-            sql.append(" AND senha_user = '"+ senha +"'");
-
-            Cursor resultado = conexao.rawQuery(sql.toString(), null);
+            String sql = "SELECT * FROM " +
+                    Tabelas.TB_USUARIOS +
+                    " WHERE login_user = '" + usuario + "'" +
+                    " AND senha_user = '" + senha + "'";
+            Cursor resultado = conexao.rawQuery(sql, null);
 
             if (resultado.moveToNext()) {
 

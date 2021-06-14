@@ -72,16 +72,28 @@ public class DadosOpenHelper extends SQLiteOpenHelper
             sqlOrdemServico.append(" CREATE TABLE IF NOT EXISTS ");
             sqlOrdemServico.append(Tabelas.TB_OS);
             sqlOrdemServico.append("(");
-            sqlOrdemServico.append("id_user INTEGER PRIMARY KEY AUTOINCREMENT, ");
-            // id_servico
             // id_user
+            sqlOrdemServico.append("id_user INTEGER NULL, ");
+            // id_servico
+            sqlOrdemServico.append("id_servicos INTEGER NULL, ");
+
+            sqlOrdemServico.append("id_os INTEGER PRIMARY KEY AUTOINCREMENT, ");
             sqlOrdemServico.append("nome_servicos VARCHAR(30) NULL, ");
             sqlOrdemServico.append("valor_servicos VARCHAR(30) NULL, ");
-            sqlOrdemServico.append("status_servicos VARCHAR(30) NULL,");
-            sqlOrdemServico.append("observacao_servicos VARCHAR(5000) NULL,");
-            sqlOrdemServico.append("date_servicos DATE NULL");
+            sqlOrdemServico.append("status_servicos VARCHAR(30) NULL, ");
+            sqlOrdemServico.append("observacao_servicos VARCHAR(5000) NULL, ");
+            sqlOrdemServico.append("date_servicos DATE NULL, ");
+            sqlOrdemServico.append("FOREIGN KEY(id_user) REFERENCES "+ Tabelas.TB_USUARIOS +"(id_user), ");
+            sqlOrdemServico.append("FOREIGN KEY(id_servicos) REFERENCES "+ Tabelas.TB_SERVICOS +"(id_servicos) ");
             sqlOrdemServico.append(")");
             db.execSQL(sqlOrdemServico.toString());
+
+            StringBuilder sqlOrdemServicopadrao = new StringBuilder();
+            sqlOrdemServicopadrao.append("INSERT INTO ");
+            sqlOrdemServicopadrao.append(Tabelas.TB_OS);
+            sqlOrdemServicopadrao.append("(nome_servicos , valor_servicos, observacao_servicos, date_servicos ) " +
+                           "VALUES " + "('Serv Teste', '50,00', 'intalação impressora', '2021')");
+            db.execSQL(sqlOrdemServicopadrao.toString());
 
 
 
@@ -89,8 +101,6 @@ public class DadosOpenHelper extends SQLiteOpenHelper
             Globais.exibirMensagens(context, ex.getMessage());
         }
     }
-
-
 
     @Override
     public void onUpgrade (SQLiteDatabase db, int oldVersion, int newVersion)

@@ -27,7 +27,6 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
         this.context = context;
         this.elementos = elementos;
 
-
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -44,17 +43,13 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
             id.setText(String.valueOf(objeto.getId()));
             login.setText(String.valueOf(objeto.getLogin()));
 
-
-
-
             rowView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick (View v) {
                     Intent tela = new Intent(context, UsuarioActivity.class);
-                    tela.putExtra("id", objeto.getId());
+                    tela.putExtra("ID", objeto.getId());
                     context.startActivity(tela);
                 }
-
 
             });
             return rowView;

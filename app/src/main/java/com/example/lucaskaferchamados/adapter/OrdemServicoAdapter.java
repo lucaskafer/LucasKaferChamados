@@ -11,17 +11,21 @@ import android.widget.TextView;
 
 import com.example.lucaskaferchamados.R;
 import com.example.lucaskaferchamados.config.Globais;
+import com.example.lucaskaferchamados.controller.ServicoController;
+import com.example.lucaskaferchamados.controller.UsuarioController;
+import com.example.lucaskaferchamados.model.OrdemServico;
 import com.example.lucaskaferchamados.model.Servicos;
+import com.example.lucaskaferchamados.model.Usuario;
 import com.example.lucaskaferchamados.view.OrdemServicoActivity;
 
 import java.util.ArrayList;
 
-public class OrdemServicoAdapter extends ArrayAdapter<Servicos> {
+public class OrdemServicoAdapter extends ArrayAdapter<OrdemServico> {
 
     Context context;
-    ArrayList<Servicos> elementos;
+    ArrayList<OrdemServico> elementos;
 
-    public OrdemServicoAdapter (Context context, ArrayList<Servicos> elementos) {
+    public OrdemServicoAdapter (Context context, ArrayList<OrdemServico> elementos) {
         super(context, R.layout.item_ordemservico, elementos);
         this.context = context;
         this.elementos = elementos;
@@ -30,20 +34,36 @@ public class OrdemServicoAdapter extends ArrayAdapter<Servicos> {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         try {
-            Servicos objeto = elementos.get(position);
+            OrdemServico objeto = elementos.get(position);
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             // toda vez que passa por um item da lista, os elementos são associados
             @SuppressLint("ViewHolder") View rowView = inflater.inflate(R.layout.item_ordemservico, parent, false);
 
 
-            TextView id = rowView.findViewById(R.id.lblId_item_osfinalizada);
-            TextView nome = rowView.findViewById(R.id.lblNome_item_osfinalizada);
+
+
+            TextView nomeCliente = rowView.findViewById(R.id.lbl_NomeCliente_item_osfinalizada);
+            TextView nomeServico = rowView.findViewById(R.id.lbl_NomeServico_item_osfinalizada);
             TextView valor = rowView.findViewById(R.id.lblValor_item_osfinalizada);
             TextView observacao = rowView.findViewById(R.id.lblObservacao_item_osfinalizada);
 
-            id.setText(String.valueOf(objeto.getId_servico()));
-            nome.setText(String.valueOf(objeto.getNome_servico()));
+            UsuarioController objUserController = new UsuarioController(context);
+            Usuario objUser = objUserController.buscar(objeto.getId_os());
+
+            ServicoController objServController = new ServicoController(context);
+            Servicos objSer= objServController.buscar(objeto.getId_os());
+
+            if(objSer != null){
+                nomeServico.setText(objSer.getNome_servico());
+            }
+
+            if(objUser != null){
+                nomeCliente.setText(objUser.getLogin());
+                }
+
+
+
             valor.setText(String.valueOf(objeto.getValor_servico()));
             observacao.setText(String.valueOf(objeto.getObservacao_servico()));
             //status_servico.setText(String.valueOf(objeto.getStatus_servico()));
@@ -52,7 +72,7 @@ public class OrdemServicoAdapter extends ArrayAdapter<Servicos> {
                 @Override
                 public void onClick (View v) {
                     Intent tela = new Intent(context, OrdemServicoActivity.class);
-                    tela.putExtra("ID", objeto.getId_servico());
+                    tela.putExtra("ID", objeto.getId_os());
                     context.startActivity(tela);
                 }
             });

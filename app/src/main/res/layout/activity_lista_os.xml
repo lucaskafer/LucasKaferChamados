@@ -8,12 +8,12 @@
 
 
         <ListView
-            android:id="@+id/ltv_OS_Lista_Usuario"
+            android:id="@+id/ltv_Lista_ordemservico"
             android:layout_width="match_parent"
             android:layout_height="831dp"></ListView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnVoltar_Servicos_Lista_OS"
+        android:id="@+id/btnVoltar_Lista_ordemservico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

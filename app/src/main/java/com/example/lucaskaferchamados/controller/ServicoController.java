@@ -19,20 +19,16 @@ public class ServicoController {
         DadosOpenHelper banco = new DadosOpenHelper(context);
         this.conexao = banco.getWritableDatabase();
         this.context = context;
-
     }
     // metodos ( buscar, listar, alterar, incluir, excluir)
-
 
     public Servicos buscar (int id) {
         try {
             Servicos objeto = null;
-
             StringBuilder sql = new StringBuilder();
             sql.append(" SELECT * FROM ");
             sql.append(Tabelas.TB_SERVICOS);
             sql.append(" WHERE id_servicos = '" + id + "'");
-
 
             Cursor resultado = conexao.rawQuery(sql.toString(), null);
 
@@ -74,7 +70,6 @@ public class ServicoController {
             Globais.exibirMensagens(context, ex.getMessage());
             return false;
         }
-
     }
 
     public boolean alterar (Servicos objeto) {
@@ -99,9 +94,7 @@ public class ServicoController {
         {
             Globais.exibirMensagens(context, ex.getMessage());
             return false;
-
         }
-
     }
 
     public boolean excluir (Servicos objeto) {
@@ -118,9 +111,7 @@ public class ServicoController {
         {
             Globais.exibirMensagens(context, ex.getMessage());
             return false;
-
         }
-
     }
 
 
@@ -136,11 +127,9 @@ public class ServicoController {
             Cursor resultado = conexao.rawQuery(sql.toString(), null);
 
             if (resultado.moveToFirst()) {
-
                 Servicos objeto;
                 do {
                     objeto = new Servicos();
-
                     objeto.setId_servico(resultado.getInt(resultado.getColumnIndexOrThrow("id_servicos")));
                     objeto.setNome_servico(resultado.getString(resultado.getColumnIndexOrThrow("nome_servicos")));
                     objeto.setValor_servico(resultado.getFloat(resultado.getColumnIndexOrThrow("valor_servicos")));

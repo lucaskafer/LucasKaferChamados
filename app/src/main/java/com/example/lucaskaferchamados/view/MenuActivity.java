@@ -15,7 +15,7 @@ import com.example.lucaskaferchamados.config.Globais;
 public class MenuActivity extends AppCompatActivity {
 
     Context context;
-    Button btMenuUsuarios, btMenuServicos, btMenuIncluirOrdemServicos, btIncluirOS;
+    Button btMenuUsuarios, btMenuServicos, btMenuIncluirOrdemServicos, btVisualizarOS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MenuActivity extends AppCompatActivity {
         btMenuUsuarios = findViewById(R.id.button_lista_usuario_Menu);
         btMenuServicos = findViewById(R.id.button_lista_servicos);
         btMenuIncluirOrdemServicos = findViewById(R.id.button_Cadastro_servicos);
-        btIncluirOS = findViewById(R.id.button_Vizualizar_OS);
+        btVisualizarOS = findViewById(R.id.button_Vizualizar_OS);
 
         btMenuUsuarios.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +43,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        btIncluirOS.setOnClickListener(new View.OnClickListener() {
+        btVisualizarOS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
                 try {

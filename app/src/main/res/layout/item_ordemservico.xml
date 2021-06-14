@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
+    android:background="@color/black"
     android:orientation="vertical"
     tools:context=".adapter.OrdemServicoAdapter">
 
     <TextView
-        android:id="@+id/lblId_item_osfinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Titulo"
@@ -17,10 +17,10 @@
         android:layout_marginStart="10dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:text="ID Cliente "/>
+        android:text="Cliente "/>
 
     <TextView
-        android:id="@+id/lblNome_Cliente_item_osfinalizada"
+        android:id="@+id/lbl_NomeCliente_item_osfinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -31,7 +31,6 @@
         android:text="Nome_CLiente"/>
 
     <TextView
-        android:id="@+id/lblId_Cliente_item_osfinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Titulo"
@@ -39,10 +38,10 @@
         android:layout_marginStart="10dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:text="ID OS "/>
+        android:text="Serviço "/>
 
     <TextView
-        android:id="@+id/lblNome_item_osfinalizada"
+        android:id="@+id/lbl_NomeServico_item_osfinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -51,18 +50,18 @@
         android:layout_alignParentStart="true"
         style="@style/Titulo"
         android:text="Nome_serviço"/>
-    <TextView
 
+    <TextView
+        style="@style/Titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        style="@style/Titulo"
-        android:text="____________________________________"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="63dp"
+        android:text="____________________________________" />
 
     <TextView
-        android:id="@+id/txtCifrao_item_osfinalizada"
         style="@style/Texto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,7 +82,7 @@
         android:layout_alignParentStart="true"
         android:text="Valor" />
     <TextView
-        android:id="@+id/lblStatus_item_osfinalizada"
+
         style="@style/Texto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,11 +93,22 @@
         android:text="Status" />
 
     <TextView
-        android:id="@+id/lblObservacao_item_osfinalizada"
+
         style="@style/Texto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="115dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="Detalhes da OS" />
+
+    <TextView
+        android:id="@+id/lblObservacao_item_osfinalizada"
+        style="@style/Texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="145dp"
         android:layout_marginStart="10dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"

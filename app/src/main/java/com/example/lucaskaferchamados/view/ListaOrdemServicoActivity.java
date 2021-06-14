@@ -9,10 +9,10 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lucaskaferchamados.R;
-import com.example.lucaskaferchamados.adapter.ServicoAdapter;
+import com.example.lucaskaferchamados.adapter.OrdemServicoAdapter;
 import com.example.lucaskaferchamados.config.Globais;
-import com.example.lucaskaferchamados.controller.ServicoController;
-import com.example.lucaskaferchamados.model.Servicos;
+import com.example.lucaskaferchamados.controller.OrdemServicoController;
+import com.example.lucaskaferchamados.model.OrdemServico;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -28,12 +28,11 @@ public class ListaOrdemServicoActivity extends AppCompatActivity {
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listaos);
+        setContentView(R.layout.activity_lista_os);
 
         context = ListaOrdemServicoActivity.this;
-        ltvOSServicos= findViewById(R.id.ltv_OS_Lista_Usuario);
-
-
+        ltvOSServicos= findViewById(R.id.ltv_Lista_ordemservico);
+        btnVoltar=findViewById(R.id.btnVoltar_Lista_ordemservico);
 
         btnVoltar.setOnClickListener(new View.OnClickListener() {
 
@@ -44,7 +43,6 @@ public class ListaOrdemServicoActivity extends AppCompatActivity {
             }
         });
     }
-
     @Override
     protected void onResume () {
         super.onResume();
@@ -54,12 +52,12 @@ public class ListaOrdemServicoActivity extends AppCompatActivity {
     {
         try {
             // buscar todos e preencher
-            ServicoController controller = new ServicoController(context);
-            ArrayList<Servicos> lista = controller.lista();
+            OrdemServicoController controller = new OrdemServicoController(context);
+            ArrayList<OrdemServico> lista = controller.lista();
 
             if (lista!= null)
             {
-                ArrayAdapter adapter = new ServicoAdapter(context,lista);
+                ArrayAdapter adapter = new OrdemServicoAdapter(context,lista);
                 ltvOSServicos.setAdapter(adapter);
             }
         }catch (Exception ex)
